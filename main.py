@@ -1,19 +1,45 @@
 import streamlit as st
 import os
 
-# Set the title of the app
-st.title("My Flexible HTML App")
-
-# Load the HTML file
-html_file_path = 'index.html'
-
-# Check if the HTML file exists
-if os.path.exists(html_file_path):
-    # Read the HTML file
-    with open(html_file_path, 'r') as file:
-        html_string = file.read()
+def read_html_file(file_path):
+    """
+    Read the contents of an HTML file and return as a string.
     
-    # Display the HTML content in the Streamlit app
-    st.components.v1.html(html_string)  # Set height to 0 for flexible height
-else:
-    st.error("HTML file not found. Please ensure 'index.html' is in the same directory as this script.")
+    Args:
+        file_path (str): index.html
+    
+    Returns:
+        str: Contents of the HTML file
+    """
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            return file.read()
+    except FileNotFoundError:
+        st.error(f"File not found: {file_path}")
+        return None
+    except Exception as e:
+        st.error(f"An error occurred: {e}")
+        return None
+
+def main():
+    """
+    Main Streamlit application function
+    """
+    st.title("HTML File Viewer")
+
+    # Specify the path to your index.html file
+    html_file_path = 'index.html'
+
+    # Check if the file exists
+    if os.path.exists(html_file_path):
+        # Read the HTML file
+        html_content = read_html_file(html_file_path)
+
+        if html_content:
+            # Use Streamlit's markdown to render HTML
+            st.markdown(html_content, unsafe_allow_html=True)
+    else:
+        st.warning(f"The file {html_file_path} does not exist in the current directory.")
+
+if __name__ == "__main__":
+    main()
