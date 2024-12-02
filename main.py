@@ -14,6 +14,6 @@ if os.path.exists(html_file_path):
         html_string = file.read()
     
     # Display the HTML content in the Streamlit app
-    st.components.v1.html(html_string, height=0)  # Set height to 0 for flexible height
+    st.components.v1.html(html_string)  # Set height to 0 for flexible height
 else:
     st.error("HTML file not found. Please ensure 'index.html' is in the same directory as this script.")
