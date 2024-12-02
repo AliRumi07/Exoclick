@@ -1,45 +1,58 @@
 import streamlit as st
-import os
 
 def read_html_file(file_path):
     """
-    Read the contents of an HTML file and return as a string.
-    
-    Args:
-        file_path (str): index.html
-    
-    Returns:
-        str: Contents of the HTML file
+    Read the contents of an HTML file
     """
     try:
         with open(file_path, 'r', encoding='utf-8') as file:
             return file.read()
     except FileNotFoundError:
-        st.error(f"File not found: {file_path}")
-        return None
-    except Exception as e:
-        st.error(f"An error occurred: {e}")
-        return None
+        return "<h1>HTML File Not Found</h1>"
 
 def main():
     """
-    Main Streamlit application function
+    Streamlit app to display the HTML page
     """
-    st.title("HTML File Viewer")
+    # Set page configuration
+    st.set_page_config(
+        page_title="Blog Posts",
+        page_icon=":memo:",
+        layout="wide"
+    )
 
-    # Specify the path to your index.html file
-    html_file_path = 'index.html'
+    # Hide Streamlit default styling
+    st.markdown("""
+    <style>
+    .reportview-container {
+        margin-top: -2em;
+    }
+    .stDeployButton {
+        display: none;
+    }
+    #MainMenu {
+        visibility: hidden;
+    }
+    footer {
+        visibility: hidden;
+    }
+    </style>
+    """, unsafe_allow_html=True)
 
-    # Check if the file exists
-    if os.path.exists(html_file_path):
-        # Read the HTML file
-        html_content = read_html_file(html_file_path)
+    # Read the HTML file
+    html_content = read_html_file('index.html')
 
-        if html_content:
-            # Use Streamlit's markdown to render HTML
-            st.markdown(html_content, unsafe_allow_html=True)
-    else:
-        st.warning(f"The file {html_file_path} does not exist in the current directory.")
+    # Display the HTML content
+    st.components.v1.html(html_content, scrolling=True, height=1200)
+
+    # Optional: Add some Streamlit-specific interactions
+    st.sidebar.header("Blog Post Controls")
+    filter_option = st.sidebar.selectbox(
+        "Filter Posts",
+        ["All Posts", "Technology", "Design", "Development"]
+    )
+
+    # You can add more interactive elements here if needed
 
 if __name__ == "__main__":
     main()
