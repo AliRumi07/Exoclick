@@ -1,145 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <div data-mndbanid="79488c29-3f82-4b5e-ba7c-ba7ff665cd16"></div>
-    <script async src="https://ss.mrmnd.com/banner.js"></script>
-    <meta name="mnd-ver" content="9ykeig8put2fb8wrtlnxq" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Posts</title>
-    
+    <title>Webpage with Banner Ad</title>
+    <script async src="https://ss.mrmnd.com/banner.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
         header {
-            background-color: #333;
-            color: #fff;
             text-align: center;
-            padding: 1rem;
-        }
-        .posts {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
             padding: 20px 0;
+            background-color: #f5f5f5;
+            margin-bottom: 20px;
         }
-        .post {
-            background-color: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            padding: 15px;
-            transition: transform 0.3s ease;
+        .content {
+            margin: 20px 0;
         }
-        .post:hover {
-            transform: scale(1.05);
-        }
-        .post h2 {
-            margin-top: 0;
-            color: #333;
-        }
-        .post a {
-            text-decoration: none;
-            color: inherit;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1rem;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-        @media (max-width: 768px) {
-            .container {
-                width: 95%;
-            }
+        .ad-container {
+            margin: 30px 0;
+            min-height: 250px;
+            background-color: #fafafa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>My Blog Posts</h1>
+        <h1>Welcome to My Website</h1>
     </header>
-    
-    <div class="container">
-        <div class="posts">
-            <div class="post">
-                <a href="#">
-                    <h2>Introduction to Web Development</h2>
-                    <p>Learn the basics of creating websites and web applications from scratch.</p>
-                </a>
-            </div>
-            <div class="post">
-                <a href="#">
-                    <h2>Machine Learning Fundamentals</h2>
-                    <p>Explore the core concepts and algorithms in machine learning.</p>
-                </a>
-            </div>
-            <div class="post">
-                <a href="#">
-                    <h2>Cybersecurity Best Practices</h2>
-                    <p>Understand how to protect your digital assets and prevent cyber threats.</p>
-                </a>
-            </div>
-            <div class="post">
-                <a href="#">
-                    <h2>Cloud Computing Explained</h2>
-                    <p>Dive into the world of cloud services and infrastructure.</p>
-                </a>
-            </div>
-            <div class="post">
-                <a href="#">
-                    <h2>Data Science Techniques</h2>
-                    <p>Discover advanced methods for analyzing and interpreting complex data.</p>
-                </a>
-            </div>
-            <div class="post">
-                <a href="#">
-                    <h2>Mobile App Development</h2>
-                    <p>Learn how to create stunning and functional mobile applications.</p>
-                </a>
-            </div>
-            <div class="post">
-                <a href="#">
-                    <h2>Artificial Intelligence Trends</h2>
-                    <p>Explore the latest advancements in AI and machine learning.</p>
-                </a>
-            </div>
-            <div class="post">
-                <a href="#">
-                    <h2>Blockchain Technology</h2>
-                    <p>Understand the principles behind blockchain and cryptocurrency.</p>
-                </a>
-            </div>
-            <div class="post">
-                <a href="#">
-                    <h2>UX/UI Design Principles</h2>
-                    <p>Master the art of creating user-friendly and intuitive interfaces.</p>
-                </a>
-            </div>
-            <div class="post">
-                <a href="#">
-                    <h2>Agile Project Management</h2>
-                    <p>Learn effective strategies for managing software development projects.</p>
-                </a>
-            </div>
-        </div>
+
+    <div class="content">
+        <h2>Main Content Section</h2>
+        <p>This is where your main content would go. The banner ad will appear below.</p>
     </div>
 
-    <footer>
-        <p>&copy; 2024 Blog Posts. All Rights Reserved.</p>
-    </footer>
+    <div class="ad-container">
+        <div data-mndbanid="79488c29-3f82-4b5e-ba7c-ba7ff665cd16"></div>
+    </div>
+
+    <div class="content">
+        <h2>Additional Content</h2>
+        <p>More content can be added here, below the banner ad.</p>
+    </div>
 </body>
 </html>
