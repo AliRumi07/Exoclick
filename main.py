@@ -1,10 +1,16 @@
-from flask import Flask, render_template
+import streamlit as st
+import streamlit.components.v1 as components
 
-app = Flask(__name__)
+# Set page title
+st.set_page_config(page_title="My Streamlit App")
 
-@app.route('/')
-def index():
-    return render_template('index.html')
+def main():
+    # Read the HTML file
+    with open('templates/index.html', 'r') as file:
+        html_content = file.read()
+    
+    # Render the HTML
+    components.html(html_content, height=600)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080, debug=True)
+    main()
